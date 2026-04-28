@@ -35,8 +35,8 @@
     </nav> %>
 
 
-<%# 
 
+    
 <nav class="bg-white border-b border-gray-300 px-10 py-4 flex items-center justify-between shadow-sm">
   
   <!-- Logo -->
@@ -48,6 +48,10 @@
   <!-- Links -->
   <ul class="hidden md:flex items-center space-x-8 text-gray-700 font-medium text-[15px]">
     <li><a href="#" class="hover:text-black transition">HTML</a></li>
+
+<%= link_to "home", root_path %>
+<%= link_to "about", about_path%>
+
     <li><a href="#" class="hover:text-black transition">CSS</a></li>
     <li><a href="#" class="hover:text-black transition">JavaScript</a></li>
     <li><a href="#" class="hover:text-black transition">Web APIs</a></li>
@@ -64,4 +68,4 @@
     <span class="text-sm text-gray-700 hidden sm:block font-medium">EN</span>
   </div>
 
-</nav> %>
+</nav>
