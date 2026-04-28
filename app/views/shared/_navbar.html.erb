@@ -1,42 +1,3 @@
- <%# <nav class="bg-green-800 
-                py-4 text-white fixed 
-                w-full top-0 left-0">
-        <div class="container mx-auto">
-            <ul class="ml-8 space-x-4">
-                <li class="inline-block">
-                    <a href="/" 
-                       class="hover:text-gray-300">
-                        Home
-                    </a>
-                </li>
-                <li class="inline-block">
-                    <a href=
-"https://www.geeksforgeeks.org/explore" 
-                       class="hover:text-gray-300">
-                        Practice
-                    </a>
-                </li>
-                <li class="inline-block">
-                    <a href=
-"https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/"
-                        class="hover:text-gray-300">
-                        Tutorials
-                    </a>
-                </li>
-                <li class="inline-block">
-                    <a href=
-"https://www.geeksforgeeks.org/about/contact-us/" 
-                      class="hover:text-gray-300">
-                        Contact
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav> %>
-
-
-
-    
 <nav class="bg-white border-b border-gray-300 px-10 py-4 flex items-center justify-between shadow-sm">
   
   <!-- Logo -->
@@ -45,12 +6,25 @@
     <span class="text-gray-900 font-bold text-xl tracking-wide">mdn_</span>
   </div>
 
-  <!-- Links -->
-  <ul class="hidden md:flex items-center space-x-8 text-gray-700 font-medium text-[15px]">
-    <li><a href="#" class="hover:text-black transition">HTML</a></li>
+  <!-- Center menu -->
+  <ul class="flex items-center space-x-6">
+    
+    <li>
+      <% if Current.session %>
+        <p>Estás logueado ✅</p>
+      <% else %>
+        <p>No has iniciado sesión ❌</p>
+      <% end %>
+    </li>
 
-<%= link_to "home", root_path %>
-<%= link_to "about", about_path%>
+    <li>
+      <% if authenticated? %>
+        <%= Current.user.email_address %>
+      <% end %>
+    </li>
+
+    <li><%= link_to "home", root_path, class: "hover:text-black transition" %></li>
+    <li><%= link_to "about", about_path, class: "hover:text-black transition" %></li>
 
     <li><a href="#" class="hover:text-black transition">CSS</a></li>
     <li><a href="#" class="hover:text-black transition">JavaScript</a></li>
@@ -59,6 +33,7 @@
     <li><a href="#" class="hover:text-black transition">Tools</a></li>
     <li><a href="#" class="hover:text-black transition">About</a></li>
     <li><a href="#" class="hover:text-black transition">Blog</a></li>
+
   </ul>
 
   <!-- Right side -->
@@ -66,6 +41,12 @@
     <button class="text-gray-600 hover:text-black text-lg transition">🔍</button>
     <button class="text-gray-600 hover:text-black text-lg transition">🌙</button>
     <span class="text-sm text-gray-700 hidden sm:block font-medium">EN</span>
+
+    <%= button_to "Sign out",
+      session_path,
+      method: :delete,
+      class: "text-white bg-red-600 border border-transparent hover:bg-red-700 focus:ring-4 focus:ring-red-300 shadow-sm font-medium leading-5 rounded px-4 py-2.5 focus:outline-none"
+    %>
   </div>
 
 </nav>
