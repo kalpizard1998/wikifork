@@ -238,6 +238,48 @@
 
 </div> %>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%# 
+
+
 <div class="flex">
     <div class="w-1/4 h-screen bg-gray-200 sticky top-0 p-4">
         <h2 class="text-lg font-bold mb-4">Navigation</h2>
@@ -300,4 +342,201 @@
             <li class="mb-2"><a href="#" class="text-gray-700 hover:text-gray-900">Contact</a></li>
         </ul>
     </div>
+</div> %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex h-screen overflow-hidden">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="w-72 bg-white border-r flex flex-col">
+
+    <!-- App Header -->
+    <div class="flex items-center justify-between p-4 border-b">
+      <h1 class="font-bold text-lg">📚 Reader AI</h1>
+      <button class="text-sm px-2 py-1 rounded hover:bg-gray-100">☰</button>
+    </div>
+
+    <!-- Search -->
+    <div class="p-3">
+      <input
+        type="text"
+        placeholder="Search books..."
+        class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring"
+      />
+    </div>
+
+    <!-- Navigation -->
+    <div class="px-3 space-y-1">
+      <button class="w-full text-left px-3 py-2 rounded-lg bg-gray-100 font-medium">
+        🏠 Dashboard
+      </button>
+      <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">
+        📖 My Library
+      </button>
+      <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">
+        🔖 Bookmarks
+      </button>
+      <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100">
+        💬 AI Chats
+      </button>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t my-3"></div>
+
+    <!-- Book List -->
+    <div class="px-3 text-xs text-gray-500 mb-2">Books</div>
+    <div class="flex-1 overflow-y-auto px-2 space-y-1">
+
+      <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 truncate">
+        Atomic Habits
+      </button>
+      <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 truncate">
+        Deep Work
+      </button>
+      <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 truncate">
+        Clean Code
+      </button>
+
+      <!-- Simulate many -->
+      <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 truncate">
+        Thinking Fast and Slow
+      </button>
+      <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 truncate">
+        The Pragmatic Programmer
+      </button>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="p-3 border-t">
+      <button class="w-full bg-black text-white py-2 rounded-lg">
+        + Add Book
+      </button>
+    </div>
+
+  </aside>
+
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="flex-1 flex flex-col">
+
+    <!-- Top Bar -->
+    <%# <header class="bg-white border-b p-4 flex justify-between items-center">
+      <h2 class="font-semibold">📖 Clean Code</h2>
+      <div class="flex gap-2">
+        <button class="px-3 py-1 border rounded">Bookmark</button>
+        <button class="px-3 py-1 border rounded">Highlight</button>
+      </div>
+    </header> %>
+
+
+
+
+
+    <!-- Content Area -->
+    <div class="flex flex-1 overflow-hidden">
+
+      <!-- Reading Panel -->
+      <section class="flex-1 overflow-y-auto p-6">
+
+        <%# <h3 class="text-xl font-bold mb-4">Chapter 1: Clean Code</h3>
+
+        <p class="mb-4 leading-relaxed text-gray-700">
+          Clean code is not just about formatting. It is about creating code that is easy to understand, maintain, and extend...
+        </p>
+
+        <p class="mb-4 leading-relaxed text-gray-700">
+          When writing code, always think about the next developer who will read it. That developer might be you in 6 months...
+        </p>
+
+        <!-- Highlight Example -->
+        <div class="bg-yellow-100 border-l-4 border-yellow-400 p-3 my-4">
+          "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
+        </div> %>
+
+      </section>
+
+      <!-- ================= RIGHT PANEL (CHAT + BOOKMARKS) ================= -->
+      <aside class="w-80 border-l bg-white flex flex-col">
+
+        <!-- Tabs -->
+        <div class="flex border-b">
+          <button class="flex-1 py-2 text-sm font-medium border-b-2 border-black">
+            Chat
+          </button>
+          <button class="flex-1 py-2 text-sm hover:bg-gray-50">
+            Bookmarks
+          </button>
+        </div>
+
+        <!-- Chat History -->
+        <div class="flex-1 overflow-y-auto p-3 space-y-3">
+
+          <!-- Chat Bubble -->
+          <div class="text-sm bg-gray-100 p-3 rounded-lg">
+            What is clean code?
+          </div>
+
+          <div class="text-sm bg-black text-white p-3 rounded-lg self-end">
+            Clean code is readable, maintainable, and simple.
+          </div>
+
+          <div class="text-sm bg-gray-100 p-3 rounded-lg">
+            Give example?
+          </div>
+
+        </div>
+
+        <!-- Chat Input -->
+        <div class="p-3 border-t">
+          <div class="flex gap-2">
+            <input
+              type="text"
+              placeholder="Ask AI..."
+              class="flex-1 px-3 py-2 border rounded-lg text-sm"
+            />
+            <button class="px-3 py-2 bg-black text-white rounded-lg">
+              ➤
+            </button>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
 </div>
